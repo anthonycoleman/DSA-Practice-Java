@@ -22,7 +22,8 @@ public class SinglyLinkedList<T> {
     }
 
     public SinglyLinkedList() {
-        // TODO: Initialize the linked list
+        this.head = null;
+        this.size = 0;
     }
 
     /**
@@ -30,7 +31,13 @@ public class SinglyLinkedList<T> {
      * @param data the data to add
      */
     public void addFirst(T data) {
-        // TODO: Implement addFirst
+        if (data == null) {
+            throw new IllegalArgumentException("Cannot add null data to the list.");
+        }
+        Node<T> newNode = new Node<>(data);
+        newNode.next = head;
+        head = newNode;
+        size++;
     }
 
     /**
@@ -38,7 +45,20 @@ public class SinglyLinkedList<T> {
      * @param data the data to add
      */
     public void addLast(T data) {
-        // TODO: Implement addLast
+        if (data == null) {
+            throw new IllegalArgumentException("Cannot add null data to the list.");
+        }
+        Node<T> newNode = new Node<>(data);
+        if (isEmpty()) {
+            head = newNode;
+        } else {
+            Node<T> current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+        size++;
     }
 
     /**
@@ -47,8 +67,13 @@ public class SinglyLinkedList<T> {
      * @throws NoSuchElementException if the list is empty
      */
     public T removeFirst() {
-        // TODO: Implement removeFirst
-        return null;
+        if (isEmpty()) {
+            throw new NoSuchElementException("List is empty.");
+        }
+        T data = head.data;
+        head = head.next;
+        size--;
+        return data;
     }
 
     /**
@@ -57,8 +82,27 @@ public class SinglyLinkedList<T> {
      * @throws NoSuchElementException if the list is empty
      */
     public T removeLast() {
-        // TODO: Implement removeLast
-        return null;
+        if (isEmpty()) {
+            throw new NoSuchElementException("List is empty.");
+        }
+        if (size == 1) { // or head.next == null
+            T data = head.data;
+            head = null;
+            size--;
+            return data;
+        }
+        Node<T> current = head;
+        Node<T> previous = null;
+        while (current.next != null) {
+            previous = current;
+            current = current.next;
+        }
+        T data = current.data;
+        if (previous != null) {
+            previous.next = null;
+        }
+        size--;
+        return data;
     }
 
     /**
@@ -68,8 +112,14 @@ public class SinglyLinkedList<T> {
      * @throws IndexOutOfBoundsException if the index is out of range
      */
     public T get(int index) {
-        // TODO: Implement get
-        return null;
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
+        }
+        Node<T> current = head;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        return current.data;
     }
 
     /**
@@ -78,7 +128,14 @@ public class SinglyLinkedList<T> {
      * @return true if this list contains the specified element
      */
     public boolean contains(T data) {
-        // TODO: Implement contains
+        if (data == null) return false; // Or throw IllegalArgumentException depending on desired behavior
+        Node<T> current = head;
+        while (current != null) {
+            if (data.equals(current.data)) {
+                return true;
+            }
+            current = current.next;
+        }
         return false;
     }
 
@@ -87,8 +144,7 @@ public class SinglyLinkedList<T> {
      * @return the number of elements
      */
     public int size() {
-        // TODO: Implement size
-        return 0;
+        return this.size;
     }
 
     /**
@@ -96,7 +152,6 @@ public class SinglyLinkedList<T> {
      * @return true if this list is empty
      */
     public boolean isEmpty() {
-        // TODO: Implement isEmpty
-        return true;
+        return size == 0;
     }
 }

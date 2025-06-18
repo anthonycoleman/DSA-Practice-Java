@@ -93,20 +93,44 @@ For each module listed below, please:
             *   `fibonacciWithMemoization(n)` (top-down DP with memoization)
             *   `fibonacciWithTabulation(n)` (bottom-up DP with tabulation)
 
-## IV. Git & GitHub Integration:
+## IV. Branching Strategy & Git Workflow:
+
+This project utilizes two primary branches:
+
+*   **`solutions` Branch (Source of Truth):**
+    *   This branch contains all the fully implemented algorithms and data structures, along with their complete and passing unit tests.
+    *   All new development, bug fixes, and additions happen here first. This is the "golden copy" and the primary branch for maintainers.
+
+*   **`main` Branch (Practice Template):**
+    *   This branch is designed for users to practice. It contains:
+        *   Method signatures for algorithms but with implementations replaced by placeholders (e.g., `// TODO: Implement...`). These stubs are designed to compile.
+        *   Complete unit tests (copied as-is from the `solutions` branch). These tests will initially fail against the placeholder implementations.
+        *   Fully implemented data structure files (e.g., `Graph.java`, `MinHeap.java`), also copied as-is from `solutions`, as these are foundational tools rather than exercises themselves.
+    *   The `main` branch is **generated** from the `solutions` branch using an automated script (details below). Users should primarily use this branch for their practice attempts.
+
+**Initial Git & GitHub Setup:**
 
 1.  After all modules are scaffolded and initial (failing) tests are written, initialize a Git repository in the project's root directory.
 2.  Add all project files to the staging area.
 3.  Create an initial commit with a message like: "Initial commit: DSA practice scaffold for **`[PROGRAMMING_LANGUAGE_HERE]`**".
-4.  Create a `README.md` file. Include a brief project title, a short description (similar to the one used for the Java project, but adapted for **`[PROGRAMMING_LANGUAGE_HERE]`**), and a "Workflow" section explaining the TDD and `git restore .` practice method. Commit this `README.md`.
-5.  Prompt me (the user) to create a new, empty repository on GitHub.com.
-6.  Once I provide the HTTPS URL for the new GitHub repository, perform the following Git commands:
+4.  Create a `README.md` file. Include a brief project title, a short description (similar to the one used for the Java project, but adapted for **`[PROGRAMMING_LANGUAGE_HERE]`**), and a "User Workflow" section (see Section V below). Commit this `README.md`.
+5.  After the initial commit on `main` (which might initially be a copy of `solutions` or a basic scaffold), create the `solutions` branch. All subsequent development of implementations and tests should occur on the `solutions` branch.
+    ```bash
+    git branch solutions
+    # Potentially: git checkout solutions; git push -u origin solutions
+    ```
+    The `main` branch will then be periodically updated from `solutions` using the generation script.
+6.  Prompt me (the user) to create a new, empty repository on GitHub.com.
+7.  Once I provide the HTTPS URL for the new GitHub repository, perform the following Git commands:
     *   `git remote add origin [USER_PROVIDED_URL]`
-    *   `git branch -m master main` (or ensure the default branch is named `main`)
+    *   Ensure the default branch is named `main` (e.g., `git branch -M main` if it was `master`).
     *   `git push -u origin main`
-    *   If the push fails due to authentication, guide me on how to run the push command from my own terminal and use a Personal Access Token (PAT).
+    *   `git push -u origin solutions` (if the `solutions` branch was created and has commits).
+    *   If any push fails due to authentication, guide me on how to run the push command from my own terminal and use a Personal Access Token (PAT).
 
-## VI. Accessing Solutions and Advanced Workflow:
+## V. User Workflow: Practicing and Accessing Solutions
+
+This section outlines how users should interact with the `main` (practice) and `solutions` (reference) branches.
 
 For projects scaffolded using this template, it's highly recommended to also create and maintain a `solutions` branch. This branch should contain complete, tested implementations for all the data structures and algorithms.
 
@@ -115,7 +139,7 @@ For projects scaffolded using this template, it's highly recommended to also cre
 *   Helps you get unstuck if you encounter difficulties during implementation.
 *   Ensures you have a working example of each concept.
 
-**Recommended Workflow for Using Solutions (similar to the Java project):**
+**Recommended Workflow for Practice and Referencing Solutions:**
 
 1.  **Attempt Implementation First**: Always try to implement the data structure or algorithm on the `main` (or your primary practice) branch yourself. This is crucial for building muscle memory.
 2.  **Save Your Progress**: If you want to view the solution or need to switch context, save your current work on your practice branch:
@@ -147,7 +171,8 @@ For projects scaffolded using this template, it's highly recommended to also cre
 *   The `solutions` branch is intended as a reference. Avoid copying code directly without understanding it.
 *   Ensure your practice branch is clean (no uncommitted changes) or your changes are stashed before switching branches to avoid conflicts.
 *   Tests on the practice branch should initially fail and pass once you correctly implement the solutions. All tests should pass on the `solutions` branch.
-*   When scaffolding a new language project, after implementing all solutions on the `solutions` branch, remember to push it to the remote repository (e.g., `git push origin solutions`).
+*   The `solutions` branch is the source of truth. All tests should pass on this branch.
+*   The `main` branch is for practice. Tests here will initially fail until you implement the stubs.
 
 **Simplifying Branch Switching (Optional Shell Aliases):**
 
@@ -164,7 +189,34 @@ Replace `[LANG]` with a short identifier for the programming language.
 
 ---
 
-## V. Final Deliverables & Confirmation:
+## VI. For Maintainers: Updating the `main` Branch
+
+The `main` branch (practice templates) is generated from the `solutions` branch (complete implementations) using an automated script. This ensures consistency and reduces manual effort.
+
+**How the Script Works (Conceptual):**
+
+1.  **Checkout `solutions`**: The script starts with the latest `solutions` branch.
+2.  **Identify Algorithm Files**: It targets specific source files designated as containing algorithms to be practiced (e.g., `Sorting.java`, `DynamicProgramming.java`). Data structure files (e.g., `Graph.java`, `MinHeap.java`) are typically copied as-is.
+3.  **AST Parsing**: For each algorithm file, the script uses Abstract Syntax Tree (AST) parsing (e.g., via JavaParser for Java projects) to understand the code's structure.
+4.  **Transform Methods**: For each relevant method in an algorithm file:
+    *   The exact method signature (visibility, static, generics, return type, name, parameters) is preserved.
+    *   The method body is replaced with:
+        *   A standard `// TODO: Implement [Algorithm/Method Name]...` comment.
+        *   Brief instructions or hints if applicable.
+        *   A placeholder `return` statement if the method is non-void (e.g., `return null;` for objects, `return 0;` for `int`, `return false;` for `boolean`). This ensures the template code compiles.
+5.  **Copy Other Files**: Unit test files are copied verbatim from `solutions` to `main`. Data structure source files are also copied verbatim.
+6.  **Commit to `main`**: The script commits the generated template files to the `main` branch with a standardized message (e.g., "Generate practice templates from solutions commit [hash]").
+
+**Benefits:**
+*   **Consistency**: `main` accurately reflects `solutions` in terms of structure and testability.
+*   **Reduced Errors**: Automation minimizes human error in creating templates.
+*   **Simplified Maintenance**: Developers focus on `solutions`; `main` is an artifact.
+
+**Note**: The script itself may require updates if new coding patterns or conventions are introduced in the `solutions` branch that it's not designed to handle.
+
+---
+
+## VII. Final Deliverables & Confirmation:
 
 *   Confirm that all requested DSA modules and their corresponding test files have been created.
 *   Confirm that the standard test command for **`[PROGRAMMING_LANGUAGE_HERE]`** (e.g., `gradle test`, `pytest`, `npm test`) runs and shows the expected initial failures for all tests.

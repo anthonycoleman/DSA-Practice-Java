@@ -21,15 +21,31 @@ public class HashTable<K, V> {
 
     private LinkedList<Entry<K, V>>[] table;
     private int size;
+    private int capacity;
     private static final int DEFAULT_CAPACITY = 16;
+    private static final double DEFAULT_LOAD_FACTOR = 0.75;
 
     @SuppressWarnings("unchecked")
     public HashTable() {
-        // TODO: Initialize the table with the default capacity
-        // table = new LinkedList[DEFAULT_CAPACITY];
-        // for (int i = 0; i < DEFAULT_CAPACITY; i++) {
-        //     table[i] = new LinkedList<>();
-        // }
+        this.capacity = DEFAULT_CAPACITY;
+        this.table = new LinkedList[capacity];
+        for (int i = 0; i < capacity; i++) {
+            table[i] = new LinkedList<>();
+        }
+        this.size = 0;
+    }
+
+    @SuppressWarnings("unchecked")
+    public HashTable(int initialCapacity) {
+        if (initialCapacity <= 0) {
+            throw new IllegalArgumentException("Initial capacity must be positive.");
+        }
+        this.capacity = initialCapacity;
+        this.table = new LinkedList[capacity];
+        for (int i = 0; i < capacity; i++) {
+            table[i] = new LinkedList<>();
+        }
+        this.size = 0;
     }
 
     /**
@@ -38,8 +54,35 @@ public class HashTable<K, V> {
      * @param key key with which the specified value is to be associated
      * @param value value to be associated with the specified key
      */
+    private int hash(K key) {
+        if (key == null) {
+            throw new IllegalArgumentException("Key cannot be null.");
+        }
+        // Ensure non-negative hash code before modulo
+        return (key.hashCode() & 0x7fffffff) % capacity;
+    }
+
     public void put(K key, V value) {
-        // TODO: Implement put. Hash the key, find the bucket, and add/update the entry.
+        if (key == null) {
+            throw new IllegalArgumentException("Key cannot be null.");
+        }
+
+        if ((1.0 * size) / capacity >= DEFAULT_LOAD_FACTOR) {
+            resize();
+        }
+
+        int index = hash(key);
+        LinkedList<Entry<K, V>> bucket = table[index];
+
+        for (Entry<K, V> entry : bucket) {
+            if (entry.key.equals(key)) {
+                entry.value = value; // Update existing key
+                return;
+            }
+        }
+
+        bucket.add(new Entry<>(key, value)); // Add new key-value pair
+        size++;
     }
 
     /**
@@ -49,8 +92,18 @@ public class HashTable<K, V> {
      * @return the value to which the specified key is mapped, or null
      */
     public V get(K key) {
-        // TODO: Implement get. Hash the key, find the bucket, and search for the key.
-        return null;
+        if (key == null) {
+            throw new IllegalArgumentException("Key cannot be null.");
+        }
+        int index = hash(key);
+        LinkedList<Entry<K, V>> bucket = table[index];
+
+        for (Entry<K, V> entry : bucket) {
+            if (entry.key.equals(key)) {
+                return entry.value;
+            }
+        }
+        return null; // Key not found
     }
 
     /**
@@ -59,8 +112,26 @@ public class HashTable<K, V> {
      * @return the previous value associated with key, or null
      */
     public V remove(K key) {
-        // TODO: Implement remove. Hash the key, find the bucket, and remove the entry.
-        return null;
+        if (key == null) {
+            throw new IllegalArgumentException("Key cannot be null.");
+        }
+        int index = hash(key);
+        LinkedList<Entry<K, V>> bucket = table[index];
+        Entry<K, V> toRemove = null;
+
+        for (Entry<K, V> entry : bucket) {
+            if (entry.key.equals(key)) {
+                toRemove = entry;
+                break;
+            }
+        }
+
+        if (toRemove != null) {
+            bucket.remove(toRemove);
+            size--;
+            return toRemove.value;
+        }
+        return null; // Key not found
     }
 
     /**
@@ -69,8 +140,10 @@ public class HashTable<K, V> {
      * @return true if this map contains a mapping for the specified key
      */
     public boolean containsKey(K key) {
-        // TODO: Implement containsKey.
-        return false;
+        if (key == null) {
+            throw new IllegalArgumentException("Key cannot be null.");
+        }
+        return get(key) != null;
     }
 
     /**
@@ -78,8 +151,7 @@ public class HashTable<K, V> {
      * @return the number of key-value mappings in this map
      */
     public int size() {
-        // TODO: Implement size.
-        return 0;
+        return this.size;
     }
 
     /**
@@ -87,7 +159,25 @@ public class HashTable<K, V> {
      * @return true if this map contains no key-value mappings
      */
     public boolean isEmpty() {
-        // TODO: Implement isEmpty.
-        return true;
+        return this.size == 0;
+    }
+
+    @SuppressWarnings("unchecked")
+    private void resize() {
+        int oldCapacity = this.capacity;
+        this.capacity *= 2; // Double the capacity
+        LinkedList<Entry<K, V>>[] oldTable = this.table;
+        this.table = new LinkedList[this.capacity];
+        this.size = 0; // Reset size, will be recounted during rehash
+
+        for (int i = 0; i < this.capacity; i++) {
+            this.table[i] = new LinkedList<>();
+        }
+
+        for (int i = 0; i < oldCapacity; i++) {
+            for (Entry<K, V> entry : oldTable[i]) {
+                put(entry.key, entry.value); // Rehash and put into new table
+            }
+        }
     }
 }

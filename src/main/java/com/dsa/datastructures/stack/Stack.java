@@ -1,5 +1,6 @@
 package com.dsa.datastructures.stack;
 
+import java.util.ArrayList;
 import java.util.EmptyStackException;
 
 /**
@@ -8,10 +9,10 @@ import java.util.EmptyStackException;
  */
 public class Stack<T> {
 
-    // You can use an ArrayList or a dynamic array for the underlying storage.
+    private ArrayList<T> storage;
 
     public Stack() {
-        // TODO: Initialize the stack's internal storage
+        storage = new ArrayList<>();
     }
 
     /**
@@ -19,7 +20,10 @@ public class Stack<T> {
      * @param item the item to be pushed onto this stack.
      */
     public void push(T item) {
-        // TODO: Implement push operation
+        if (item == null) {
+            throw new IllegalArgumentException("Cannot push null onto the stack.");
+        }
+        storage.add(item);
     }
 
     /**
@@ -28,8 +32,10 @@ public class Stack<T> {
      * @throws EmptyStackException if this stack is empty.
      */
     public T pop() {
-        // TODO: Implement pop operation
-        return null;
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return storage.remove(storage.size() - 1);
     }
 
     /**
@@ -38,8 +44,10 @@ public class Stack<T> {
      * @throws EmptyStackException if this stack is empty.
      */
     public T peek() {
-        // TODO: Implement peek operation
-        return null;
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return storage.get(storage.size() - 1);
     }
 
     /**
@@ -47,8 +55,7 @@ public class Stack<T> {
      * @return true if and only if this stack contains no items; false otherwise.
      */
     public boolean isEmpty() {
-        // TODO: Implement isEmpty operation
-        return true;
+        return storage.isEmpty();
     }
 
     /**
@@ -56,7 +63,6 @@ public class Stack<T> {
      * @return the number of items in this stack.
      */
     public int size() {
-        // TODO: Implement size operation
-        return 0;
+        return storage.size();
     }
 }

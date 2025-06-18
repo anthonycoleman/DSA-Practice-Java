@@ -1,5 +1,6 @@
 package com.dsa.datastructures.queue;
 
+import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
 /**
@@ -8,10 +9,10 @@ import java.util.NoSuchElementException;
  */
 public class Queue<T> {
 
-    // You can use a LinkedList or a dynamic array for the underlying storage.
+    private LinkedList<T> storage;
 
     public Queue() {
-        // TODO: Initialize the queue's internal storage
+        storage = new LinkedList<>();
     }
 
     /**
@@ -19,7 +20,10 @@ public class Queue<T> {
      * @param item the element to add
      */
     public void enqueue(T item) {
-        // TODO: Implement enqueue operation
+        if (item == null) {
+            throw new IllegalArgumentException("Cannot enqueue null item.");
+        }
+        storage.addLast(item);
     }
 
     /**
@@ -28,8 +32,10 @@ public class Queue<T> {
      * @throws NoSuchElementException if this queue is empty
      */
     public T dequeue() {
-        // TODO: Implement dequeue operation
-        return null;
+        if (isEmpty()) {
+            throw new NoSuchElementException("Queue is empty.");
+        }
+        return storage.removeFirst();
     }
 
     /**
@@ -38,8 +44,10 @@ public class Queue<T> {
      * @throws NoSuchElementException if this queue is empty
      */
     public T peek() {
-        // TODO: Implement peek operation
-        return null;
+        if (isEmpty()) {
+            throw new NoSuchElementException("Queue is empty.");
+        }
+        return storage.peekFirst();
     }
 
     /**
@@ -47,8 +55,7 @@ public class Queue<T> {
      * @return true if and only if this queue contains no items; false otherwise.
      */
     public boolean isEmpty() {
-        // TODO: Implement isEmpty operation
-        return true;
+        return storage.isEmpty();
     }
 
     /**
@@ -56,7 +63,6 @@ public class Queue<T> {
      * @return the number of items in this queue.
      */
     public int size() {
-        // TODO: Implement size operation
-        return 0;
+        return storage.size();
     }
 }
