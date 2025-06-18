@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-import java.util.Collections;
 
 /**
  * Represents a graph using an adjacency list.
@@ -77,7 +76,10 @@ public class Graph<T> {
         if (vertex == null) {
             throw new IllegalArgumentException("Vertex cannot be null.");
         }
-        return adjacencyList.getOrDefault(vertex, Collections.emptyList());
+        if (!adjacencyList.containsKey(vertex)) {
+            return null;
+        }
+        return adjacencyList.get(vertex);
     }
 
     /**

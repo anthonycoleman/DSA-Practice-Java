@@ -7,25 +7,30 @@ public class DynamicProgramming {
 
     // Purely recursive Fibonacci (can be slow for large n)
     public static long fibonacciRecursive(int n) {
-        // TODO: Implement the naive recursive solution.
-        // This is inefficient and has a time complexity of O(2^n).
         if (n < 0) {
             throw new IllegalArgumentException("Input n cannot be negative.");
         }
-        // Handle base cases (e.g., n <= 1).
-        return -1; // Placeholder for long
+        if (n <= 1) {
+            return n;
+        }
+        return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
     }
 
     // Fibonacci with Tabulation (Bottom-Up DP)
     public static long fibonacciWithTabulation(int n) {
-        // TODO: Implement the tabulated (bottom-up) solution.
-        // This is efficient, with a time complexity of O(n) and O(n) space.
         if (n < 0) {
             throw new IllegalArgumentException("Input n cannot be negative.");
         }
-        // You will need an array or list to store Fibonacci numbers from 0 to n.
-        // Handle base cases (e.g., n <= 1).
-        return -1; // Placeholder for long
+        if (n <= 1) {
+            return n;
+        }
+        long[] table = new long[n + 1];
+        table[0] = 0;
+        table[1] = 1;
+        for (int i = 2; i <= n; i++) {
+            table[i] = table[i - 1] + table[i - 2];
+        }
+        return table[n];
     }
 
 
@@ -36,15 +41,20 @@ public class DynamicProgramming {
     }
 
     public static long fibonacciWithMemoization(int n) {
-        // TODO: Implement the memoized (top-down) solution.
-        // This is efficient, with a time complexity of O(n).
-        // Remember to use fibMemo and resetFibonacciMemo() appropriately.
         if (n < 0) {
             throw new IllegalArgumentException("Input n cannot be negative.");
         }
-        // Handle base cases (e.g., n <= 1).
-        // Check fibMemo, compute if not present, store, then return.
-        return -1; // Placeholder for long
+        if (n <= 1) {
+            return n;
+        }
+        // Check if already computed
+        if (fibMemo.containsKey(n)) {
+            return fibMemo.get(n);
+        }
+        // Compute and store
+        long result = fibonacciWithMemoization(n - 1) + fibonacciWithMemoization(n - 2);
+        fibMemo.put(n, result);
+        return result;
     }
 
     /**
@@ -55,13 +65,25 @@ public class DynamicProgramming {
      * @return The number of distinct ways to climb the staircase.
      */
     public static int climbStairs(int n) {
-        // TODO: Implement the climbStairs solution.
-        // You can use tabulation (bottom-up DP).
         if (n < 0) {
             throw new IllegalArgumentException("Number of stairs cannot be negative.");
         }
-        // Handle base cases (e.g., n == 0, n == 1).
-        return 0; // Placeholder for int
+        if (n == 0) {
+            return 1; // One way to climb 0 stairs: do nothing
+        }
+        if (n == 1) {
+            return 1; // One way to climb 1 stair: take 1 step
+        }
+
+        // dp[i] will be storing the number of ways to reach step i
+        int[] dp = new int[n + 1];
+        dp[0] = 1; // Base case: 1 way to be at step 0 (start)
+        dp[1] = 1; // Base case: 1 way to reach step 1
+
+        for (int i = 2; i <= n; i++) {
+            dp[i] = dp[i - 1] + dp[i - 2];
+        }
+        return dp[n];
     }
 
 }

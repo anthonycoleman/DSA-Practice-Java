@@ -2,7 +2,7 @@ package com.dsa.datastructures.heap;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException; // Using this for consistency with other data structures, though stub suggested IllegalStateException
+
 
 /**
  * An implementation of a Min-Heap, a binary tree-based data structure
@@ -37,7 +37,7 @@ public class MinHeap<T extends Comparable<T>> {
      */
     public T peek() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Heap is empty."); // Changed to NoSuchElementException for consistency
+            throw new IllegalStateException("Heap is empty.");
         }
         return heap.get(0);
     }
@@ -49,7 +49,7 @@ public class MinHeap<T extends Comparable<T>> {
      */
     public T extractMin() {
         if (isEmpty()) {
-            throw new NoSuchElementException("Heap is empty."); // Changed to NoSuchElementException for consistency
+            throw new IllegalStateException("Heap is empty.");
         }
         T minItem = heap.get(0);
         T lastItem = heap.remove(heap.size() - 1);
