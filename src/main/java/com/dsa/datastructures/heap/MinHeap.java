@@ -1,6 +1,8 @@
 package com.dsa.datastructures.heap;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException; // Using this for consistency with other data structures, though stub suggested IllegalStateException
 
 /**
  * An implementation of a Min-Heap, a binary tree-based data structure
@@ -13,7 +15,7 @@ public class MinHeap<T extends Comparable<T>> {
     private List<T> heap;
 
     public MinHeap() {
-        // TODO: Initialize the heap's internal storage (e.g., an ArrayList)
+        this.heap = new ArrayList<>();
     }
 
     /**
@@ -21,7 +23,11 @@ public class MinHeap<T extends Comparable<T>> {
      * @param item The element to add.
      */
     public void insert(T item) {
-        // TODO: Implement insert. Add the element to the end and heapify up.
+        if (item == null) {
+            throw new IllegalArgumentException("Cannot insert null item into the heap.");
+        }
+        heap.add(item);
+        siftUp();
     }
 
     /**
@@ -30,8 +36,10 @@ public class MinHeap<T extends Comparable<T>> {
      * @throws IllegalStateException if the heap is empty.
      */
     public T peek() {
-        // TODO: Implement peek. The min element is always at the root.
-        return null;
+        if (isEmpty()) {
+            throw new NoSuchElementException("Heap is empty."); // Changed to NoSuchElementException for consistency
+        }
+        return heap.get(0);
     }
 
     /**
@@ -40,8 +48,16 @@ public class MinHeap<T extends Comparable<T>> {
      * @throws IllegalStateException if the heap is empty.
      */
     public T extractMin() {
-        // TODO: Implement extractMin. Replace root with last element, then heapify down.
-        return null;
+        if (isEmpty()) {
+            throw new NoSuchElementException("Heap is empty."); // Changed to NoSuchElementException for consistency
+        }
+        T minItem = heap.get(0);
+        T lastItem = heap.remove(heap.size() - 1);
+        if (!isEmpty()) {
+            heap.set(0, lastItem);
+            siftDown();
+        }
+        return minItem;
     }
 
     /**
@@ -49,8 +65,7 @@ public class MinHeap<T extends Comparable<T>> {
      * @return The number of elements.
      */
     public int size() {
-        // TODO: Implement size.
-        return 0;
+        return heap.size();
     }
 
     /**
@@ -58,7 +73,61 @@ public class MinHeap<T extends Comparable<T>> {
      * @return true if this heap is empty.
      */
     public boolean isEmpty() {
-        // TODO: Implement isEmpty.
-        return true;
+        return heap.isEmpty();
+    }
+
+    // Helper methods
+    private int getParentIndex(int childIndex) {
+        return (childIndex - 1) / 2;
+    }
+
+    private int getLeftChildIndex(int parentIndex) {
+        return 2 * parentIndex + 1;
+    }
+
+    private int getRightChildIndex(int parentIndex) {
+        return 2 * parentIndex + 2;
+    }
+
+    private boolean hasParent(int childIndex) {
+        return getParentIndex(childIndex) >= 0;
+    }
+
+    private boolean hasLeftChild(int parentIndex) {
+        return getLeftChildIndex(parentIndex) < heap.size();
+    }
+
+    private boolean hasRightChild(int parentIndex) {
+        return getRightChildIndex(parentIndex) < heap.size();
+    }
+
+    private void swap(int indexOne, int indexTwo) {
+        T temp = heap.get(indexOne);
+        heap.set(indexOne, heap.get(indexTwo));
+        heap.set(indexTwo, temp);
+    }
+
+    private void siftUp() {
+        int index = heap.size() - 1;
+        while (hasParent(index) && heap.get(index).compareTo(heap.get(getParentIndex(index))) < 0) {
+            swap(index, getParentIndex(index));
+            index = getParentIndex(index);
+        }
+    }
+
+    private void siftDown() {
+        int index = 0;
+        while (hasLeftChild(index)) {
+            int smallerChildIndex = getLeftChildIndex(index);
+            if (hasRightChild(index) && heap.get(getRightChildIndex(index)).compareTo(heap.get(smallerChildIndex)) < 0) {
+                smallerChildIndex = getRightChildIndex(index);
+            }
+
+            if (heap.get(index).compareTo(heap.get(smallerChildIndex)) < 0) {
+                break; // Heap property is satisfied
+            }
+            swap(index, smallerChildIndex);
+            index = smallerChildIndex;
+        }
     }
 }
