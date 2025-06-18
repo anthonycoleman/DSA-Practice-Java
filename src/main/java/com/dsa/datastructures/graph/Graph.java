@@ -1,6 +1,8 @@
 package com.dsa.datastructures.graph;
 
 import java.util.List;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
@@ -19,8 +21,7 @@ public class Graph<T> {
      * @param isDirected true if the graph is directed, false otherwise.
      */
     public Graph(boolean isDirected) {
-        // TODO: Initialize the adjacency list and set the directed flag
-        this.adjacencyList = null; // Placeholder
+        this.adjacencyList = new HashMap<>();
         this.isDirected = isDirected;
     }
 
@@ -29,7 +30,10 @@ public class Graph<T> {
      * @param vertex The vertex to add.
      */
     public void addVertex(T vertex) {
-        // TODO: Implement addVertex
+        if (vertex == null) {
+            throw new IllegalArgumentException("Vertex cannot be null.");
+        }
+        adjacencyList.putIfAbsent(vertex, new ArrayList<>());
     }
 
     /**
@@ -39,7 +43,20 @@ public class Graph<T> {
      * @param destination The destination vertex.
      */
     public void addEdge(T source, T destination) {
-        // TODO: Implement addEdge
+        if (source == null || destination == null) {
+            throw new IllegalArgumentException("Source and destination vertices cannot be null.");
+        }
+        // Ensure vertices exist in the graph, add them if they don't
+        addVertex(source);
+        addVertex(destination);
+
+        // Add edge from source to destination
+        adjacencyList.get(source).add(destination);
+
+        // If undirected, add edge from destination to source as well
+        if (!isDirected) {
+            adjacencyList.get(destination).add(source);
+        }
     }
 
     /**
@@ -47,8 +64,7 @@ public class Graph<T> {
      * @return A set containing all vertices.
      */
     public Set<T> getVertices() {
-        // TODO: Implement getVertices
-        return null;
+        return adjacencyList.keySet();
     }
 
     /**
@@ -57,8 +73,13 @@ public class Graph<T> {
      * @return A list of neighboring vertices.
      */
     public List<T> getNeighbors(T vertex) {
-        // TODO: Implement getNeighbors
-        return null;
+        if (vertex == null) {
+            throw new IllegalArgumentException("Vertex cannot be null.");
+        }
+        if (!adjacencyList.containsKey(vertex)) {
+            return null;
+        }
+        return adjacencyList.get(vertex);
     }
 
     /**
@@ -66,7 +87,6 @@ public class Graph<T> {
      * @return The number of vertices.
      */
     public int getVertexCount() {
-        // TODO: Implement getVertexCount
-        return 0;
+        return adjacencyList.size();
     }
 }
