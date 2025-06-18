@@ -3,3 +3,20 @@
 
 # Ignore Gradle build output directory
 build
+
+# macOS
+.DS_Store
+
+# Java compiled output
+bin/
+*.class
+
+# IDE-specific (add more as needed)
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+target/
+.gradle/
+build/
