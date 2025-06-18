@@ -106,6 +106,64 @@ For each module listed below, please:
     *   `git push -u origin main`
     *   If the push fails due to authentication, guide me on how to run the push command from my own terminal and use a Personal Access Token (PAT).
 
+## VI. Accessing Solutions and Advanced Workflow:
+
+For projects scaffolded using this template, it's highly recommended to also create and maintain a `solutions` branch. This branch should contain complete, tested implementations for all the data structures and algorithms.
+
+**Purpose of the `solutions` Branch:**
+*   Provides a reference to check your work.
+*   Helps you get unstuck if you encounter difficulties during implementation.
+*   Ensures you have a working example of each concept.
+
+**Recommended Workflow for Using Solutions (similar to the Java project):**
+
+1.  **Attempt Implementation First**: Always try to implement the data structure or algorithm on the `main` (or your primary practice) branch yourself. This is crucial for building muscle memory.
+2.  **Save Your Progress**: If you want to view the solution or need to switch context, save your current work on your practice branch:
+    ```bash
+    # Stash your current uncommitted changes, including untracked files
+    git stash push -u -m "My practice on [Topic] in [PROGRAMMING_LANGUAGE_HERE]"
+    # The -m adds a descriptive message to your stash.
+    ```
+3.  **Switch to the Solutions Branch**:
+    ```bash
+    git switch solutions
+    # (Ensure this branch exists and is up-to-date)
+    ```
+4.  **View the Solution**: Navigate to the relevant file to see the complete implementation.
+5.  **Return to Your Practice Branch**:
+    ```bash
+    git switch main # Or your primary practice branch name
+    ```
+6.  **Restore Your Work**:
+    ```bash
+    # To apply the most recent stash and remove it from the stash list:
+    git stash pop
+    # Or, if you have multiple stashes, list them with `git stash list`
+    # and apply a specific one with `git stash apply stash@{N}` (where N is the stash number),
+    # then `git stash drop stash@{N}` if you're done with it.
+    ```
+
+**Important Notes for the `solutions` Branch Workflow:**
+*   The `solutions` branch is intended as a reference. Avoid copying code directly without understanding it.
+*   Ensure your practice branch is clean (no uncommitted changes) or your changes are stashed before switching branches to avoid conflicts.
+*   Tests on the practice branch should initially fail and pass once you correctly implement the solutions. All tests should pass on the `solutions` branch.
+*   When scaffolding a new language project, after implementing all solutions on the `solutions` branch, remember to push it to the remote repository (e.g., `git push origin solutions`).
+
+**Simplifying Branch Switching (Optional Shell Aliases):**
+
+You can adapt the shell alias examples from the Java project's `README.md` for your specific shell and workflow.
+
+Example for Zsh (`~/.zshrc`):
+```bash
+# DSA Practice Aliases for [PROGRAMMING_LANGUAGE_HERE]
+alias dsa_lang_save="git stash push -u -m '[LANG] practice progress'"
+alias dsa_lang_view_solutions="dsa_lang_save && git switch solutions"
+alias dsa_lang_return_to_practice="git switch main && git stash pop"
+```
+Replace `[LANG]` with a short identifier for the programming language.
+
+---
+
 ## V. Final Deliverables & Confirmation:
 
 *   Confirm that all requested DSA modules and their corresponding test files have been created.
