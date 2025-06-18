@@ -14,15 +14,15 @@ public class Trie {
         boolean isEndOfWord;
 
         TrieNode() {
-            // TODO: Initialize children map and set isEndOfWord to false
+            this.children = new HashMap<>();
+            this.isEndOfWord = false;
         }
     }
 
     private final TrieNode root;
 
     public Trie() {
-        // TODO: Initialize the root node
-        this.root = null; // Placeholder
+        this.root = new TrieNode();
     }
 
     /**
@@ -30,8 +30,15 @@ public class Trie {
      * @param word The word to insert.
      */
     public void insert(String word) {
-        // TODO: Implement insert. Traverse the trie, creating nodes as necessary,
-        // and mark the end of the word.
+        if (word == null || word.isEmpty()) {
+            throw new IllegalArgumentException("Word cannot be null or empty.");
+        }
+        TrieNode current = root;
+        for (char ch : word.toCharArray()) {
+            current.children.putIfAbsent(ch, new TrieNode());
+            current = current.children.get(ch);
+        }
+        current.isEndOfWord = true;
     }
 
     /**
@@ -40,9 +47,21 @@ public class Trie {
      * @return true if the word is in the trie, false otherwise.
      */
     public boolean search(String word) {
-        // TODO: Implement search. Traverse the trie and check if the final node
-        // is marked as the end of a word.
-        return false;
+        if (word == null) {
+            throw new IllegalArgumentException("Word to search cannot be null.");
+        }
+        if (word.isEmpty()) {
+            return root.isEndOfWord; // Only true if an empty string was explicitly inserted (not by this impl)
+        }
+        TrieNode current = root;
+        for (char ch : word.toCharArray()) {
+            TrieNode node = current.children.get(ch);
+            if (node == null) {
+                return false; // Path does not exist
+            }
+            current = node;
+        }
+        return current.isEndOfWord;
     }
 
     /**
@@ -51,8 +70,20 @@ public class Trie {
      * @return true if there is any word with the given prefix, false otherwise.
      */
     public boolean startsWith(String prefix) {
-        // TODO: Implement startsWith. Traverse the trie. If the traversal completes,
-        // a word with the prefix exists.
-        return false;
+        if (prefix == null) {
+            throw new IllegalArgumentException("Prefix cannot be null.");
+        }
+        if (prefix.isEmpty()) {
+            return true; // Any trie contains words starting with an empty prefix
+        }
+        TrieNode current = root;
+        for (char ch : prefix.toCharArray()) {
+            TrieNode node = current.children.get(ch);
+            if (node == null) {
+                return false; // Path does not exist
+            }
+            current = node;
+        }
+        return true; // Prefix path exists
     }
 }
