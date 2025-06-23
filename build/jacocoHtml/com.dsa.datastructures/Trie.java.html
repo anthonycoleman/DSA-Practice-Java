@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Trie.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">DSA-Practice-Java</a> &gt; <a href="index.source.html" class="el_package">com.dsa.datastructures</a> &gt; <span class="el_source">Trie.java</span></div><h1>Trie.java</h1><pre class="source lang-java linenums">package com.dsa.datastructures;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Trie (Prefix Tree) implementation for strings
+ */
+public class Trie {
+    
+    private static class TrieNode {
+        Map&lt;Character, TrieNode&gt; children;
+        boolean isEndOfWord;
+        
+<span class="fc" id="L15">        TrieNode() {</span>
+<span class="fc" id="L16">            children = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L17">            isEndOfWord = false;</span>
+<span class="fc" id="L18">        }</span>
+    }
+    
+    private final TrieNode root;
+    
+<span class="fc" id="L23">    public Trie() {</span>
+<span class="fc" id="L24">        root = new TrieNode();</span>
+<span class="fc" id="L25">    }</span>
+    
+    /**
+     * Insert word into trie
+     * @param word word to insert
+     */
+    public void insert(String word) {
+<span class="fc bfc" id="L32" title="All 2 branches covered.">        if (word == null) {</span>
+<span class="fc" id="L33">            throw new IllegalArgumentException(&quot;Word cannot be null&quot;);</span>
+        }
+        
+<span class="fc" id="L36">        TrieNode current = root;</span>
+<span class="fc bfc" id="L37" title="All 2 branches covered.">        for (char ch : word.toCharArray()) {</span>
+<span class="fc" id="L38">            current.children.putIfAbsent(ch, new TrieNode());</span>
+<span class="fc" id="L39">            current = current.children.get(ch);</span>
+        }
+<span class="fc" id="L41">        current.isEndOfWord = true;</span>
+<span class="fc" id="L42">    }</span>
+    
+    /**
+     * Search for complete word in trie
+     * @param word word to search for
+     * @return true if word exists, false otherwise
+     */
+    public boolean search(String word) {
+<span class="fc bfc" id="L50" title="All 2 branches covered.">        if (word == null) {</span>
+<span class="fc" id="L51">            return false;</span>
+        }
+        
+<span class="fc" id="L54">        TrieNode current = root;</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">        for (char ch : word.toCharArray()) {</span>
+<span class="fc" id="L56">            TrieNode node = current.children.get(ch);</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">            if (node == null) {</span>
+<span class="fc" id="L58">                return false;</span>
+            }
+<span class="fc" id="L60">            current = node;</span>
+        }
+<span class="fc" id="L62">        return current.isEndOfWord;</span>
+    }
+    
+    /**
+     * Check if any word starts with given prefix
+     * @param prefix prefix to check
+     * @return true if prefix exists, false otherwise
+     */
+    public boolean startsWith(String prefix) {
+<span class="fc bfc" id="L71" title="All 2 branches covered.">        if (prefix == null) {</span>
+<span class="fc" id="L72">            return false;</span>
+        }
+        
+<span class="fc" id="L75">        TrieNode current = root;</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">        for (char ch : prefix.toCharArray()) {</span>
+<span class="fc" id="L77">            TrieNode node = current.children.get(ch);</span>
+<span class="fc bfc" id="L78" title="All 2 branches covered.">            if (node == null) {</span>
+<span class="fc" id="L79">                return false;</span>
+            }
+<span class="fc" id="L81">            current = node;</span>
+        }
+<span class="fc" id="L83">        return true;</span>
+    }
+    
+    
+    /**
+     * Check if trie is empty
+     * @return true if empty, false otherwise
+     */
+    public boolean isEmpty() {
+<span class="fc" id="L92">        return root.children.isEmpty();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

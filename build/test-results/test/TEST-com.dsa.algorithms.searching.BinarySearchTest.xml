@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dsa.algorithms.searching.BinarySearchTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2025-06-23T03:43:19.233Z" hostname="MacBookAir.lan" time="0.035">
+  <properties/>
+  <testcase name="testBinarySearch_WithNegativeNumbers_HandlesCorrectly()" classname="com.dsa.algorithms.searching.BinarySearchTest" time="0.007"/>
+  <testcase name="testBinarySearch_EmptyArray_ReturnsMinusOne()" classname="com.dsa.algorithms.searching.BinarySearchTest" time="0.0"/>
+  <testcase name="testBinarySearch_EdgeCases_BoundaryConditions()" classname="com.dsa.algorithms.searching.BinarySearchTest" time="0.0"/>
+  <testcase name="testBinarySearch_NullArray_ReturnsMinusOne()" classname="com.dsa.algorithms.searching.BinarySearchTest" time="0.0"/>
+  <testcase name="testBinarySearch_SingleElement_Found()" classname="com.dsa.algorithms.searching.BinarySearchTest" time="0.001"/>
+  <testcase name="testBinarySearch_TwoElements_BothFound()" classname="com.dsa.algorithms.searching.BinarySearchTest" time="0.004"/>
+  <testcase name="testBinarySearch_AllSameElements_HandlesCorrectly()" classname="com.dsa.algorithms.searching.BinarySearchTest" time="0.001"/>
+  <testcase name="testBinarySearch_WithZeroValues_HandlesCorrectly()" classname="com.dsa.algorithms.searching.BinarySearchTest" time="0.0"/>
+  <testcase name="testBinarySearch_InLargeArray_Performance()" classname="com.dsa.algorithms.searching.BinarySearchTest" time="0.004"/>
+  <testcase name="testBinarySearch_ElementExists_ReturnsCorrectIndex()" classname="com.dsa.algorithms.searching.BinarySearchTest" time="0.0"/>
+  <testcase name="testBinarySearch_ElementNotExists_ReturnsMinusOne()" classname="com.dsa.algorithms.searching.BinarySearchTest" time="0.004"/>
+  <testcase name="testBinarySearch_SingleElement_NotFound()" classname="com.dsa.algorithms.searching.BinarySearchTest" time="0.001"/>
+  <testcase name="testBinarySearch_ExtremeValues_HandlesCorrectly()" classname="com.dsa.algorithms.searching.BinarySearchTest" time="0.0"/>
+  <testcase name="testBinarySearch_TwoElements_NotFound()" classname="com.dsa.algorithms.searching.BinarySearchTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

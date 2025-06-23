@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dsa.algorithms.graph.DepthFirstSearchTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2025-06-23T03:43:19.202Z" hostname="MacBookAir.lan" time="0.029">
+  <properties/>
+  <testcase name="testDFS_TreeStructure_VisitsInDepthFirstOrder()" classname="com.dsa.algorithms.graph.DepthFirstSearchTest" time="0.003"/>
+  <testcase name="testDFS_NullStartVertex_ReturnsEmptyList()" classname="com.dsa.algorithms.graph.DepthFirstSearchTest" time="0.001"/>
+  <testcase name="testDFS_SelfLoop_HandlesCorrectly()" classname="com.dsa.algorithms.graph.DepthFirstSearchTest" time="0.001"/>
+  <testcase name="testDFS_DisconnectedGraph_OnlyVisitsConnectedComponent()" classname="com.dsa.algorithms.graph.DepthFirstSearchTest" time="0.0"/>
+  <testcase name="testDFSRecursive_NullGraph_ReturnsEmptyList()" classname="com.dsa.algorithms.graph.DepthFirstSearchTest" time="0.002"/>
+  <testcase name="testDFS_LinearGraph_VisitsInDepthFirstOrder()" classname="com.dsa.algorithms.graph.DepthFirstSearchTest" time="0.002"/>
+  <testcase name="testDFS_NonExistentStartVertex_ReturnsEmptyList()" classname="com.dsa.algorithms.graph.DepthFirstSearchTest" time="0.0"/>
+  <testcase name="testBFSvsDFS_SameGraph_VisitsSameNodes()" classname="com.dsa.algorithms.graph.DepthFirstSearchTest" time="0.002"/>
+  <testcase name="testDFS_UndirectedGraph_VisitsAllConnectedNodes()" classname="com.dsa.algorithms.graph.DepthFirstSearchTest" time="0.0"/>
+  <testcase name="testDFS_DirectedGraph_VisitsReachableNodes()" classname="com.dsa.algorithms.graph.DepthFirstSearchTest" time="0.0"/>
+  <testcase name="testDFS_SingleNode_ReturnsSingleNode()" classname="com.dsa.algorithms.graph.DepthFirstSearchTest" time="0.001"/>
+  <testcase name="testDFS_NullGraph_ReturnsEmptyList()" classname="com.dsa.algorithms.graph.DepthFirstSearchTest" time="0.001"/>
+  <testcase name="testDFSRecursive_UndirectedGraph_VisitsAllConnectedNodes()" classname="com.dsa.algorithms.graph.DepthFirstSearchTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

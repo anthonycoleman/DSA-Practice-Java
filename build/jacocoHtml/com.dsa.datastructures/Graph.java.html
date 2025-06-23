@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Graph.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">DSA-Practice-Java</a> &gt; <a href="index.source.html" class="el_package">com.dsa.datastructures</a> &gt; <span class="el_source">Graph.java</span></div><h1>Graph.java</h1><pre class="source lang-java linenums">package com.dsa.datastructures;
+
+import java.util.*;
+
+/**
+ * Generic Graph implementation using adjacency list representation
+ * @param &lt;T&gt; the type of vertices stored in this graph
+ */
+public class Graph&lt;T&gt; {
+    private final Map&lt;T, List&lt;T&gt;&gt; adjacencyList;
+    private final boolean isDirected;
+    
+    /**
+     * Constructor
+     * @param isDirected true for directed graph, false for undirected
+     */
+<span class="fc" id="L17">    public Graph(boolean isDirected) {</span>
+<span class="fc" id="L18">        this.adjacencyList = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L19">        this.isDirected = isDirected;</span>
+<span class="fc" id="L20">    }</span>
+    
+    /**
+     * Add vertex to graph
+     * @param vertex vertex to add
+     */
+    public void addVertex(T vertex) {
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        if (!adjacencyList.containsKey(vertex)) {</span>
+<span class="fc" id="L28">            adjacencyList.put(vertex, new ArrayList&lt;&gt;());</span>
+        }
+<span class="fc" id="L30">    }</span>
+    
+    /**
+     * Add edge between two vertices
+     * @param source source vertex
+     * @param destination destination vertex
+     */
+    public void addEdge(T source, T destination) {
+        // Add vertices if they don't exist
+<span class="fc" id="L39">        addVertex(source);</span>
+<span class="fc" id="L40">        addVertex(destination);</span>
+        
+        // Add edge from source to destination
+<span class="fc" id="L43">        adjacencyList.get(source).add(destination);</span>
+        
+        // If undirected, add edge from destination to source
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        if (!isDirected) {</span>
+<span class="fc" id="L47">            adjacencyList.get(destination).add(source);</span>
+        }
+<span class="fc" id="L49">    }</span>
+    
+    /**
+     * Get all vertices in graph
+     * @return set of all vertices
+     */
+    public Set&lt;T&gt; getVertices() {
+<span class="fc" id="L56">        return new HashSet&lt;&gt;(adjacencyList.keySet());</span>
+    }
+    
+    /**
+     * Get neighbors of specified vertex
+     * @param vertex vertex to get neighbors for
+     * @return list of neighbors, or empty list if vertex doesn't exist
+     */
+    public List&lt;T&gt; getNeighbors(T vertex) {
+<span class="fc" id="L65">        return adjacencyList.getOrDefault(vertex, new ArrayList&lt;&gt;());</span>
+    }
+    
+    /**
+     * Get total number of vertices
+     * @return number of vertices
+     */
+    public int getVertexCount() {
+<span class="fc" id="L73">        return adjacencyList.size();</span>
+    }
+    
+    /**
+     * Check if graph contains a vertex
+     * @param vertex vertex to check
+     * @return true if vertex exists, false otherwise
+     */
+    public boolean containsVertex(T vertex) {
+<span class="fc" id="L82">        return adjacencyList.containsKey(vertex);</span>
+    }
+    
+    /**
+     * Check if there's an edge between two vertices
+     * @param source source vertex
+     * @param destination destination vertex
+     * @return true if edge exists, false otherwise
+     */
+    public boolean hasEdge(T source, T destination) {
+<span class="fc bfc" id="L92" title="All 2 branches covered.">        if (!adjacencyList.containsKey(source)) {</span>
+<span class="fc" id="L93">            return false;</span>
+        }
+<span class="fc" id="L95">        return adjacencyList.get(source).contains(destination);</span>
+    }
+    
+    /**
+     * Remove vertex and all its edges
+     * @param vertex vertex to remove
+     */
+    public void removeVertex(T vertex) {
+<span class="fc bfc" id="L103" title="All 2 branches covered.">        if (!adjacencyList.containsKey(vertex)) {</span>
+<span class="fc" id="L104">            return;</span>
+        }
+        
+        // Remove all edges to this vertex
+<span class="fc bfc" id="L108" title="All 2 branches covered.">        for (List&lt;T&gt; neighbors : adjacencyList.values()) {</span>
+<span class="fc" id="L109">            neighbors.remove(vertex);</span>
+<span class="fc" id="L110">        }</span>
+        
+        // Remove the vertex itself
+<span class="fc" id="L113">        adjacencyList.remove(vertex);</span>
+<span class="fc" id="L114">    }</span>
+    
+    /**
+     * Remove edge between two vertices
+     * @param source source vertex
+     * @param destination destination vertex
+     */
+    public void removeEdge(T source, T destination) {
+<span class="pc bpc" id="L122" title="1 of 2 branches missed.">        if (adjacencyList.containsKey(source)) {</span>
+<span class="fc" id="L123">            adjacencyList.get(source).remove(destination);</span>
+        }
+        
+<span class="pc bpc" id="L126" title="1 of 4 branches missed.">        if (!isDirected &amp;&amp; adjacencyList.containsKey(destination)) {</span>
+<span class="fc" id="L127">            adjacencyList.get(destination).remove(source);</span>
+        }
+<span class="fc" id="L129">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

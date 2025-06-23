@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dsa.algorithms.dp.FibonacciMemoizationTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2025-06-23T03:43:18.909Z" hostname="MacBookAir.lan" time="0.13">
+  <properties/>
+  <testcase name="testFibonacciWithMemoization_BaseCase_Zero()" classname="com.dsa.algorithms.dp.FibonacciMemoizationTest" time="0.074"/>
+  <testcase name="testFibonacciWithMemoization_LargerNumbers_WorksEfficiently()" classname="com.dsa.algorithms.dp.FibonacciMemoizationTest" time="0.002"/>
+  <testcase name="testFibonacciWithMemoization_SmallNumbers_CorrectValues()" classname="com.dsa.algorithms.dp.FibonacciMemoizationTest" time="0.002"/>
+  <testcase name="testFibonacciWithMemoization_PerformanceComparison_FasterThanRecursive()" classname="com.dsa.algorithms.dp.FibonacciMemoizationTest" time="0.002"/>
+  <testcase name="testFibonacciWithMemoization_BaseCase_One()" classname="com.dsa.algorithms.dp.FibonacciMemoizationTest" time="0.001"/>
+  <testcase name="testFibonacciWithMemoization_NegativeInput_ThrowsException()" classname="com.dsa.algorithms.dp.FibonacciMemoizationTest" time="0.012"/>
+  <testcase name="testFibonacciWithMemoization_SequenceProperty_CorrectFormula()" classname="com.dsa.algorithms.dp.FibonacciMemoizationTest" time="0.014"/>
+  <testcase name="testFibonacciWithMemoization_FirstTwentyNumbers_CorrectSequence()" classname="com.dsa.algorithms.dp.FibonacciMemoizationTest" time="0.005"/>
+  <testcase name="testFibonacciWithMemoization_ConsistentResults_MultipleCallsSameInput()" classname="com.dsa.algorithms.dp.FibonacciMemoizationTest" time="0.001"/>
+  <testcase name="testFibonacciWithMemoization_LargeNumbers_Performance()" classname="com.dsa.algorithms.dp.FibonacciMemoizationTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

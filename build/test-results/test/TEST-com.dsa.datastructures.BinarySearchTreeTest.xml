@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dsa.datastructures.BinarySearchTreeTest" tests="23" skipped="0" failures="0" errors="0" timestamp="2025-06-23T03:43:19.440Z" hostname="MacBookAir.lan" time="0.039">
+  <properties/>
+  <testcase name="testTraversalOnEmptyTree_ReturnsEmptyList()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.0"/>
+  <testcase name="testPostOrderTraversal_ReturnsCorrectOrder()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.003"/>
+  <testcase name="testDelete_NodeWithTwoChildren_RemovesCorrectly()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.0"/>
+  <testcase name="testInOrderTraversal_ReturnsElementsInSortedOrder()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.001"/>
+  <testcase name="testSequentialInsertions_CreatesBalancedLookingTree()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.001"/>
+  <testcase name="testBSTDeleteRootMultipleTimes_HandlesCorrectly()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.0"/>
+  <testcase name="testSearch_NonExistentElement_ReturnsFalse()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.0"/>
+  <testcase name="testPreOrderTraversal_ReturnsCorrectOrder()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.001"/>
+  <testcase name="testComplexDeleteSequence_MaintainsBSTProperty()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.0"/>
+  <testcase name="testSearch_EmptyTree_ReturnsFalse()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.0"/>
+  <testcase name="testDelete_NodeWithOneChild_RemovesCorrectly()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.0"/>
+  <testcase name="testInsert_SingleElement_NotEmpty()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.0"/>
+  <testcase name="testNewBST_IsEmpty()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.001"/>
+  <testcase name="testDelete_NonExistentElement_NoChange()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.0"/>
+  <testcase name="testWithStrings_WorksCorrectly()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.0"/>
+  <testcase name="testDelete_LeafNode_RemovesCorrectly()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.001"/>
+  <testcase name="testSkewedBST_RightSkewed_WorksCorrectly()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.003"/>
+  <testcase name="testSkewedBST_LeftSkewed_WorksCorrectly()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.002"/>
+  <testcase name="testInsert_MultipleElements_MaintainsBSTProperty()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.001"/>
+  <testcase name="testDelete_EmptyTree_NoException()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.001"/>
+  <testcase name="testBSTWithExtremeValues_HandlesCorrectly()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.001"/>
+  <testcase name="testInsertDuplicates_NoDuplicatesInserted()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.0"/>
+  <testcase name="testLargeBST_Performance_WorksCorrectly()" classname="com.dsa.datastructures.BinarySearchTreeTest" time="0.011"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

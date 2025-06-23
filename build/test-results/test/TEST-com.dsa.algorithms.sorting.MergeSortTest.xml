@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dsa.algorithms.sorting.MergeSortTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2025-06-23T03:43:19.361Z" hostname="MacBookAir.lan" time="0.023">
+  <properties/>
+  <testcase name="testMergeSort_NullArray_NoException()" classname="com.dsa.algorithms.sorting.MergeSortTest" time="0.004"/>
+  <testcase name="testMergeSort_WithDuplicates_HandlesCorrectly()" classname="com.dsa.algorithms.sorting.MergeSortTest" time="0.001"/>
+  <testcase name="testMergeSort_EmptyArray_NoChange()" classname="com.dsa.algorithms.sorting.MergeSortTest" time="0.001"/>
+  <testcase name="testMergeSort_SingleElement_NoChange()" classname="com.dsa.algorithms.sorting.MergeSortTest" time="0.001"/>
+  <testcase name="testMergeSort_LargeArray_SortsCorrectly()" classname="com.dsa.algorithms.sorting.MergeSortTest" time="0.0"/>
+  <testcase name="testMergeSort_WithNegativeNumbers_HandlesCorrectly()" classname="com.dsa.algorithms.sorting.MergeSortTest" time="0.0"/>
+  <testcase name="testMergeSort_PowerOfTwoSize_HandlesCorrectly()" classname="com.dsa.algorithms.sorting.MergeSortTest" time="0.001"/>
+  <testcase name="testMergeSort_AlreadySorted_HandlesCorrectly()" classname="com.dsa.algorithms.sorting.MergeSortTest" time="0.001"/>
+  <testcase name="testMergeSort_LargeArray_Performance()" classname="com.dsa.algorithms.sorting.MergeSortTest" time="0.002"/>
+  <testcase name="testMergeSort_OddNumberOfElements_HandlesCorrectly()" classname="com.dsa.algorithms.sorting.MergeSortTest" time="0.001"/>
+  <testcase name="testMergeSort_TwoElements_SortsCorrectly()" classname="com.dsa.algorithms.sorting.MergeSortTest" time="0.001"/>
+  <testcase name="testMergeSort_ReverseSorted_SortsCorrectly()" classname="com.dsa.algorithms.sorting.MergeSortTest" time="0.001"/>
+  <testcase name="testMergeSort_ExtremeValues_HandlesCorrectly()" classname="com.dsa.algorithms.sorting.MergeSortTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

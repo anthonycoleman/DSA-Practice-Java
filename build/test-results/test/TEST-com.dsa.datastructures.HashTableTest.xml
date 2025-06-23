@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dsa.datastructures.HashTableTest" tests="22" skipped="0" failures="0" errors="0" timestamp="2025-06-23T03:43:19.576Z" hostname="MacBookAir.lan" time="0.044">
+  <properties/>
+  <testcase name="testRemove_ExistingKey_RemovesAndReturnsValue()" classname="com.dsa.datastructures.HashTableTest" time="0.005"/>
+  <testcase name="testNullValues_HandledCorrectly()" classname="com.dsa.datastructures.HashTableTest" time="0.0"/>
+  <testcase name="testSameHashCode_DifferentKeys()" classname="com.dsa.datastructures.HashTableTest" time="0.0"/>
+  <testcase name="testRemove_NullKey_ReturnsNull()" classname="com.dsa.datastructures.HashTableTest" time="0.001"/>
+  <testcase name="testCollisionHandling_SeparateChaining()" classname="com.dsa.datastructures.HashTableTest" time="0.002"/>
+  <testcase name="testGenericTypes_WorksWithDifferentTypes()" classname="com.dsa.datastructures.HashTableTest" time="0.001"/>
+  <testcase name="testContainsKey_NonExistentKey_ReturnsFalse()" classname="com.dsa.datastructures.HashTableTest" time="0.0"/>
+  <testcase name="testPut_NullKey_ThrowsException()" classname="com.dsa.datastructures.HashTableTest" time="0.006"/>
+  <testcase name="testPut_MultipleKeyValues_AllStored()" classname="com.dsa.datastructures.HashTableTest" time="0.001"/>
+  <testcase name="testPut_DuplicateKey_UpdatesValue()" classname="com.dsa.datastructures.HashTableTest" time="0.0"/>
+  <testcase name="testDynamicResizing_HandlesLoadFactor()" classname="com.dsa.datastructures.HashTableTest" time="0.002"/>
+  <testcase name="testClearAllElements_ByRemoval()" classname="com.dsa.datastructures.HashTableTest" time="0.0"/>
+  <testcase name="testGet_NonExistentKey_ReturnsNull()" classname="com.dsa.datastructures.HashTableTest" time="0.0"/>
+  <testcase name="testNewHashTable_IsEmpty()" classname="com.dsa.datastructures.HashTableTest" time="0.0"/>
+  <testcase name="testGet_ExistingKey_ReturnsValue()" classname="com.dsa.datastructures.HashTableTest" time="0.0"/>
+  <testcase name="testEmptyStringKey_WorksCorrectly()" classname="com.dsa.datastructures.HashTableTest" time="0.0"/>
+  <testcase name="testRemove_NonExistentKey_ReturnsNull()" classname="com.dsa.datastructures.HashTableTest" time="0.0"/>
+  <testcase name="testGet_NullKey_ReturnsNull()" classname="com.dsa.datastructures.HashTableTest" time="0.001"/>
+  <testcase name="testContainsKey_ExistingKey_ReturnsTrue()" classname="com.dsa.datastructures.HashTableTest" time="0.001"/>
+  <testcase name="testPut_SingleKeyValue_SizeIncreases()" classname="com.dsa.datastructures.HashTableTest" time="0.0"/>
+  <testcase name="testMixedOperations_WorkCorrectly()" classname="com.dsa.datastructures.HashTableTest" time="0.0"/>
+  <testcase name="testLargeNumberOfElements_PerformanceTest()" classname="com.dsa.datastructures.HashTableTest" time="0.014"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

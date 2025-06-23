@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dsa.algorithms.graph.BreadthFirstSearchTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2025-06-23T03:43:19.159Z" hostname="MacBookAir.lan" time="0.039">
+  <properties/>
+  <testcase name="testBFS_StartFromDifferentNode_WorksCorrectly()" classname="com.dsa.algorithms.graph.BreadthFirstSearchTest" time="0.014"/>
+  <testcase name="testBFS_LinearGraph_VisitsInCorrectOrder()" classname="com.dsa.algorithms.graph.BreadthFirstSearchTest" time="0.001"/>
+  <testcase name="testBFS_NullStartVertex_ReturnsEmptyList()" classname="com.dsa.algorithms.graph.BreadthFirstSearchTest" time="0.0"/>
+  <testcase name="testBFS_DisconnectedGraph_OnlyVisitsConnectedComponent()" classname="com.dsa.algorithms.graph.BreadthFirstSearchTest" time="0.004"/>
+  <testcase name="testBFS_StarGraph_VisitsInBreadthFirstOrder()" classname="com.dsa.algorithms.graph.BreadthFirstSearchTest" time="0.0"/>
+  <testcase name="testBFS_SingleNode_ReturnsSingleNode()" classname="com.dsa.algorithms.graph.BreadthFirstSearchTest" time="0.0"/>
+  <testcase name="testBFS_NonExistentStartVertex_ReturnsEmptyList()" classname="com.dsa.algorithms.graph.BreadthFirstSearchTest" time="0.001"/>
+  <testcase name="testBFS_NullGraph_ReturnsEmptyList()" classname="com.dsa.algorithms.graph.BreadthFirstSearchTest" time="0.002"/>
+  <testcase name="testBFS_SelfLoop_HandlesCorrectly()" classname="com.dsa.algorithms.graph.BreadthFirstSearchTest" time="0.001"/>
+  <testcase name="testBFS_UndirectedGraph_VisitsAllConnectedNodes()" classname="com.dsa.algorithms.graph.BreadthFirstSearchTest" time="0.001"/>
+  <testcase name="testBFS_DirectedGraph_VisitsReachableNodes()" classname="com.dsa.algorithms.graph.BreadthFirstSearchTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

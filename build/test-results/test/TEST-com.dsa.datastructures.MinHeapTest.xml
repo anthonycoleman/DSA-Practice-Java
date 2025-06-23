@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dsa.datastructures.MinHeapTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2025-06-23T03:43:19.626Z" hostname="MacBookAir.lan" time="0.032">
+  <properties/>
+  <testcase name="testGenericType_WorksWithStrings()" classname="com.dsa.datastructures.MinHeapTest" time="0.001"/>
+  <testcase name="testInsertDuplicates_HandlesCorrectly()" classname="com.dsa.datastructures.MinHeapTest" time="0.0"/>
+  <testcase name="testInsert_MultipleElements_MaintainsMinProperty()" classname="com.dsa.datastructures.MinHeapTest" time="0.0"/>
+  <testcase name="testSingleElementOperations_WorkCorrectly()" classname="com.dsa.datastructures.MinHeapTest" time="0.001"/>
+  <testcase name="testPeek_EmptyHeap_ThrowsException()" classname="com.dsa.datastructures.MinHeapTest" time="0.001"/>
+  <testcase name="testMixedOperations_MaintainsHeapProperty()" classname="com.dsa.datastructures.MinHeapTest" time="0.001"/>
+  <testcase name="testExtractMin_EmptyHeap_ThrowsException()" classname="com.dsa.datastructures.MinHeapTest" time="0.001"/>
+  <testcase name="testRandomInsertionOrder_ProducesSortedOutput()" classname="com.dsa.datastructures.MinHeapTest" time="0.007"/>
+  <testcase name="testAlternatingInsertExtract_MaintainsCorrectness()" classname="com.dsa.datastructures.MinHeapTest" time="0.0"/>
+  <testcase name="testInsert_SingleElement_SizeIncreases()" classname="com.dsa.datastructures.MinHeapTest" time="0.0"/>
+  <testcase name="testHeapProperty_AfterMultipleInsertions()" classname="com.dsa.datastructures.MinHeapTest" time="0.001"/>
+  <testcase name="testNewHeap_IsEmpty()" classname="com.dsa.datastructures.MinHeapTest" time="0.001"/>
+  <testcase name="testExtractMin_SingleElement_ReturnsElementAndEmptiesHeap()" classname="com.dsa.datastructures.MinHeapTest" time="0.0"/>
+  <testcase name="testExtractMin_MultipleElements_ReturnsInSortedOrder()" classname="com.dsa.datastructures.MinHeapTest" time="0.001"/>
+  <testcase name="testStressTest_LargeHeap()" classname="com.dsa.datastructures.MinHeapTest" time="0.011"/>
+  <testcase name="testLargeNumberOfElements_MaintainsPerformance()" classname="com.dsa.datastructures.MinHeapTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

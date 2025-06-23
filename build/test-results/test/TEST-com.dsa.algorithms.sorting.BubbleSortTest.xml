@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dsa.algorithms.sorting.BubbleSortTest" tests="11" skipped="0" failures="0" errors="0" timestamp="2025-06-23T03:43:19.302Z" hostname="MacBookAir.lan" time="0.043">
+  <properties/>
+  <testcase name="testBubbleSort_AllSameElements_HandlesCorrectly()" classname="com.dsa.algorithms.sorting.BubbleSortTest" time="0.009"/>
+  <testcase name="testBubbleSort_EmptyArray_NoChange()" classname="com.dsa.algorithms.sorting.BubbleSortTest" time="0.001"/>
+  <testcase name="testBubbleSort_RandomOrder_SortsCorrectly()" classname="com.dsa.algorithms.sorting.BubbleSortTest" time="0.002"/>
+  <testcase name="testBubbleSort_ExtremeValues_HandlesCorrectly()" classname="com.dsa.algorithms.sorting.BubbleSortTest" time="0.001"/>
+  <testcase name="testBubbleSort_NullArray_NoException()" classname="com.dsa.algorithms.sorting.BubbleSortTest" time="0.003"/>
+  <testcase name="testBubbleSort_SingleElement_NoChange()" classname="com.dsa.algorithms.sorting.BubbleSortTest" time="0.0"/>
+  <testcase name="testBubbleSort_TwoElements_SortsCorrectly()" classname="com.dsa.algorithms.sorting.BubbleSortTest" time="0.001"/>
+  <testcase name="testBubbleSort_WithNegativeNumbers_HandlesCorrectly()" classname="com.dsa.algorithms.sorting.BubbleSortTest" time="0.004"/>
+  <testcase name="testBubbleSort_WithDuplicates_HandlesCorrectly()" classname="com.dsa.algorithms.sorting.BubbleSortTest" time="0.001"/>
+  <testcase name="testBubbleSort_ReverseSorted_SortsCorrectly()" classname="com.dsa.algorithms.sorting.BubbleSortTest" time="0.001"/>
+  <testcase name="testBubbleSort_AlreadySorted_NoChange()" classname="com.dsa.algorithms.sorting.BubbleSortTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

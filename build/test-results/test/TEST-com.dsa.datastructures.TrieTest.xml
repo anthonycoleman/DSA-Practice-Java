@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dsa.datastructures.TrieTest" tests="21" skipped="0" failures="0" errors="0" timestamp="2025-06-23T03:43:19.815Z" hostname="MacBookAir.lan" time="0.029">
+  <properties/>
+  <testcase name="testSearch_EmptyString_WorksCorrectly()" classname="com.dsa.datastructures.TrieTest" time="0.003"/>
+  <testcase name="testSearch_NullWord_ReturnsFalse()" classname="com.dsa.datastructures.TrieTest" time="0.0"/>
+  <testcase name="testLongWords_WorkCorrectly()" classname="com.dsa.datastructures.TrieTest" time="0.001"/>
+  <testcase name="testStartsWith_NonExistentPrefix_ReturnsFalse()" classname="com.dsa.datastructures.TrieTest" time="0.001"/>
+  <testcase name="testComplexInsertAndSearch_WorksCorrectly()" classname="com.dsa.datastructures.TrieTest" time="0.0"/>
+  <testcase name="testWordsWithCommonPrefix_BothWork()" classname="com.dsa.datastructures.TrieTest" time="0.001"/>
+  <testcase name="testStartsWith_NullPrefix_ReturnsFalse()" classname="com.dsa.datastructures.TrieTest" time="0.0"/>
+  <testcase name="testSearch_NonExistentWord_ReturnsFalse()" classname="com.dsa.datastructures.TrieTest" time="0.0"/>
+  <testcase name="testSingleCharacterWords_WorkCorrectly()" classname="com.dsa.datastructures.TrieTest" time="0.001"/>
+  <testcase name="testInsert_NullWord_ThrowsException()" classname="com.dsa.datastructures.TrieTest" time="0.0"/>
+  <testcase name="testSpecialCharacters_NotSupported()" classname="com.dsa.datastructures.TrieTest" time="0.003"/>
+  <testcase name="testStartsWith_EmptyString_ReturnsTrue()" classname="com.dsa.datastructures.TrieTest" time="0.0"/>
+  <testcase name="testStartsWith_ExistingPrefix_ReturnsTrue()" classname="com.dsa.datastructures.TrieTest" time="0.0"/>
+  <testcase name="testStartsWith_EmptyTrie_ReturnsFalse()" classname="com.dsa.datastructures.TrieTest" time="0.001"/>
+  <testcase name="testInsertDuplicateWord_HandlesCorrectly()" classname="com.dsa.datastructures.TrieTest" time="0.0"/>
+  <testcase name="testInsert_MultipleWords_AllSearchable()" classname="com.dsa.datastructures.TrieTest" time="0.003"/>
+  <testcase name="testSearch_EmptyTrie_ReturnsFalse()" classname="com.dsa.datastructures.TrieTest" time="0.001"/>
+  <testcase name="testCaseSensitivity_TreatsAsDistinct()" classname="com.dsa.datastructures.TrieTest" time="0.0"/>
+  <testcase name="testInsert_SingleWord_NotEmpty()" classname="com.dsa.datastructures.TrieTest" time="0.0"/>
+  <testcase name="testNewTrie_IsEmpty()" classname="com.dsa.datastructures.TrieTest" time="0.0"/>
+  <testcase name="testPrefixVsCompleteWord_BehaviorDifference()" classname="com.dsa.datastructures.TrieTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

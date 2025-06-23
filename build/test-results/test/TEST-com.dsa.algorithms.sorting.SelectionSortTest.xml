@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dsa.algorithms.sorting.SelectionSortTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2025-06-23T03:43:19.427Z" hostname="MacBookAir.lan" time="0.008">
+  <properties/>
+  <testcase name="testSelectionSort_ReverseSorted_SortsCorrectly()" classname="com.dsa.algorithms.sorting.SelectionSortTest" time="0.001"/>
+  <testcase name="testSelectionSort_WithNegativeNumbers_HandlesCorrectly()" classname="com.dsa.algorithms.sorting.SelectionSortTest" time="0.0"/>
+  <testcase name="testSelectionSort_TwoElements_SortsCorrectly()" classname="com.dsa.algorithms.sorting.SelectionSortTest" time="0.0"/>
+  <testcase name="testSelectionSort_SingleElement_NoChange()" classname="com.dsa.algorithms.sorting.SelectionSortTest" time="0.0"/>
+  <testcase name="testSelectionSort_NullArray_NoException()" classname="com.dsa.algorithms.sorting.SelectionSortTest" time="0.001"/>
+  <testcase name="testSelectionSort_EmptyArray_NoChange()" classname="com.dsa.algorithms.sorting.SelectionSortTest" time="0.0"/>
+  <testcase name="testSelectionSort_AlreadySorted_HandlesCorrectly()" classname="com.dsa.algorithms.sorting.SelectionSortTest" time="0.001"/>
+  <testcase name="testSelectionSort_AllSameElements_HandlesCorrectly()" classname="com.dsa.algorithms.sorting.SelectionSortTest" time="0.0"/>
+  <testcase name="testSelectionSort_FindsMinimumCorrectly()" classname="com.dsa.algorithms.sorting.SelectionSortTest" time="0.0"/>
+  <testcase name="testSelectionSort_RandomOrder_SortsCorrectly()" classname="com.dsa.algorithms.sorting.SelectionSortTest" time="0.0"/>
+  <testcase name="testSelectionSort_ExtremeValues_HandlesCorrectly()" classname="com.dsa.algorithms.sorting.SelectionSortTest" time="0.0"/>
+  <testcase name="testSelectionSort_WithDuplicates_HandlesCorrectly()" classname="com.dsa.algorithms.sorting.SelectionSortTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

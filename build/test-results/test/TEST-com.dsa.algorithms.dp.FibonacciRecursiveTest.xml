@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dsa.algorithms.dp.FibonacciRecursiveTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2025-06-23T03:43:19.057Z" hostname="MacBookAir.lan" time="0.028">
+  <properties/>
+  <testcase name="testFibonacciRecursive_SmallNumbers_CorrectValues()" classname="com.dsa.algorithms.dp.FibonacciRecursiveTest" time="0.009"/>
+  <testcase name="testFibonacciRecursive_NegativeInput_ThrowsException()" classname="com.dsa.algorithms.dp.FibonacciRecursiveTest" time="0.001"/>
+  <testcase name="testFibonacciRecursive_ModerateNumbers_StillWorks()" classname="com.dsa.algorithms.dp.FibonacciRecursiveTest" time="0.0"/>
+  <testcase name="testFibonacciRecursive_KnownValues_CorrectResults()" classname="com.dsa.algorithms.dp.FibonacciRecursiveTest" time="0.003"/>
+  <testcase name="testFibonacciRecursive_SequenceProperty_CorrectFormula()" classname="com.dsa.algorithms.dp.FibonacciRecursiveTest" time="0.001"/>
+  <testcase name="testFibonacciRecursive_BaseCase_One()" classname="com.dsa.algorithms.dp.FibonacciRecursiveTest" time="0.001"/>
+  <testcase name="testFibonacciRecursive_BaseCase_Zero()" classname="com.dsa.algorithms.dp.FibonacciRecursiveTest" time="0.0"/>
+  <testcase name="testFibonacciRecursive_FirstTenNumbers_CorrectSequence()" classname="com.dsa.algorithms.dp.FibonacciRecursiveTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

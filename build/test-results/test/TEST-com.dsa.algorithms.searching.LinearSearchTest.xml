@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.dsa.algorithms.searching.LinearSearchTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2025-06-23T03:43:19.270Z" hostname="MacBookAir.lan" time="0.03">
+  <properties/>
+  <testcase name="testLinearSearch_ElementNotExists_ReturnsMinusOne()" classname="com.dsa.algorithms.searching.LinearSearchTest" time="0.002"/>
+  <testcase name="testLinearSearch_InLargeArray_WorksCorrectly()" classname="com.dsa.algorithms.searching.LinearSearchTest" time="0.007"/>
+  <testcase name="testLinearSearch_DuplicateElements_ReturnsFirstIndex()" classname="com.dsa.algorithms.searching.LinearSearchTest" time="0.0"/>
+  <testcase name="testLinearSearch_NullArray_ReturnsMinusOne()" classname="com.dsa.algorithms.searching.LinearSearchTest" time="0.0"/>
+  <testcase name="testLinearSearch_WithNegativeNumbers_HandlesCorrectly()" classname="com.dsa.algorithms.searching.LinearSearchTest" time="0.0"/>
+  <testcase name="testLinearSearch_SingleElement_NotFound()" classname="com.dsa.algorithms.searching.LinearSearchTest" time="0.0"/>
+  <testcase name="testLinearSearch_AllSameElements_FindsFirst()" classname="com.dsa.algorithms.searching.LinearSearchTest" time="0.0"/>
+  <testcase name="testLinearSearch_EmptyArray_ReturnsMinusOne()" classname="com.dsa.algorithms.searching.LinearSearchTest" time="0.0"/>
+  <testcase name="testLinearSearch_FirstAndLastElements_WorksCorrectly()" classname="com.dsa.algorithms.searching.LinearSearchTest" time="0.0"/>
+  <testcase name="testLinearSearch_SingleElement_Found()" classname="com.dsa.algorithms.searching.LinearSearchTest" time="0.001"/>
+  <testcase name="testLinearSearch_ExtremeValues_HandlesCorrectly()" classname="com.dsa.algorithms.searching.LinearSearchTest" time="0.001"/>
+  <testcase name="testLinearSearch_WithZeroValues_HandlesCorrectly()" classname="com.dsa.algorithms.searching.LinearSearchTest" time="0.001"/>
+  <testcase name="testLinearSearch_ElementExists_ReturnsCorrectIndex()" classname="com.dsa.algorithms.searching.LinearSearchTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
