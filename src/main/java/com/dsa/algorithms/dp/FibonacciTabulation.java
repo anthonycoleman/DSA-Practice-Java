@@ -29,18 +29,10 @@ public class FibonacciTabulation {
      */
     public static long fibonacciWithTabulation(int n) {
         if (n < 0) throw new IllegalArgumentException("n must be non-negative");
-        if (n <= 1) return n;
         
-        long prev2 = 0;
-        long prev1 = 1;
-        long current = 0;
-        
-        for (int i = 2; i <= n; i++) {
-            current = prev1 + prev2;
-            prev2 = prev1;
-            prev1 = current;
-        }
-        
-        return current;
+        // TODO: Implement Fibonacci with tabulation (bottom-up approach)
+        // Hint: Start with base cases F(0) = 0, F(1) = 1
+        // Use iteration to build up to F(n), keeping track of only the last two values
+        return 0; // Placeholder return value
     }
 }

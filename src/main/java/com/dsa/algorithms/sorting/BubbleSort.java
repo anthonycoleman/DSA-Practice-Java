@@ -24,22 +24,12 @@ public class BubbleSort {
     public static void bubbleSort(int[] arr) {
         if (arr == null || arr.length <= 1) return;
         
-        int n = arr.length;
-        for (int i = 0; i < n - 1; i++) {
-            boolean swapped = false;
-            for (int j = 0; j < n - i - 1; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    swap(arr, j, j + 1);
-                    swapped = true;
-                }
-            }
-            if (!swapped) break; // Optimization: if no swaps, array is sorted
-        }
+        // TODO: Implement bubble sort algorithm
+        // Hint: Use nested loops to compare adjacent elements and swap if needed
     }
     
     private static void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+        // TODO: Implement swap method
+        // Hint: Use a temporary variable to swap elements at indices i and j
     }
 }

@@ -27,8 +27,10 @@ public class FibonacciRecursive {
      */
     public static long fibonacciRecursive(int n) {
         if (n < 0) throw new IllegalArgumentException("n must be non-negative");
-        if (n <= 1) return n;
         
-        return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+        // TODO: Implement recursive Fibonacci calculation
+        // Hint: Base cases are F(0) = 0 and F(1) = 1
+        // For other values, F(n) = F(n-1) + F(n-2)
+        return 0; // Placeholder return value
     }
 }

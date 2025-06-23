@@ -33,31 +33,10 @@ public class DepthFirstSearch {
             return new ArrayList<>();
         }
         
-        List<T> result = new ArrayList<>();
-        Set<T> visited = new HashSet<>();
-        Stack<T> stack = new Stack<>();
-        
-        stack.push(startVertex);
-        
-        while (!stack.isEmpty()) {
-            T current = stack.pop();
-            
-            if (!visited.contains(current)) {
-                visited.add(current);
-                result.add(current);
-                
-                // Add neighbors in reverse order to maintain left-to-right traversal
-                List<T> neighbors = new ArrayList<>(graph.getNeighbors(current));
-                Collections.reverse(neighbors);
-                for (T neighbor : neighbors) {
-                    if (!visited.contains(neighbor)) {
-                        stack.push(neighbor);
-                    }
-                }
-            }
-        }
-        
-        return result;
+        // TODO: Implement iterative depth-first search algorithm
+        // Hint: Use a stack to store vertices to visit and a set to track visited vertices
+        // Go as deep as possible before backtracking
+        return new ArrayList<>(); // Placeholder return value
     }
     
     /**
@@ -71,20 +50,13 @@ public class DepthFirstSearch {
             return new ArrayList<>();
         }
         
-        List<T> result = new ArrayList<>();
-        Set<T> visited = new HashSet<>();
-        dfsHelper(graph, startVertex, visited, result);
-        return result;
+        // TODO: Implement recursive depth-first search algorithm
+        // Hint: Use a helper method with visited set and result list
+        return new ArrayList<>(); // Placeholder return value
     }
     
     private static <T> void dfsHelper(Graph<T> graph, T vertex, Set<T> visited, List<T> result) {
-        visited.add(vertex);
-        result.add(vertex);
-        
-        for (T neighbor : graph.getNeighbors(vertex)) {
-            if (!visited.contains(neighbor)) {
-                dfsHelper(graph, neighbor, visited, result);
-            }
-        }
+        // TODO: Implement the recursive helper method
+        // Hint: Mark vertex as visited, add to result, then recursively visit neighbors
     }
 }

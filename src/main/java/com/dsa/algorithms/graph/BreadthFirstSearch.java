@@ -33,25 +33,9 @@ public class BreadthFirstSearch {
             return new ArrayList<>();
         }
         
-        List<T> result = new ArrayList<>();
-        Set<T> visited = new HashSet<>();
-        Queue<T> queue = new LinkedList<>();
-        
-        queue.offer(startVertex);
-        visited.add(startVertex);
-        
-        while (!queue.isEmpty()) {
-            T current = queue.poll();
-            result.add(current);
-            
-            for (T neighbor : graph.getNeighbors(current)) {
-                if (!visited.contains(neighbor)) {
-                    visited.add(neighbor);
-                    queue.offer(neighbor);
-                }
-            }
-        }
-        
-        return result;
+        // TODO: Implement breadth-first search algorithm
+        // Hint: Use a queue to store vertices to visit and a set to track visited vertices
+        // Visit all neighbors at the current level before moving to the next level
+        return new ArrayList<>(); // Placeholder return value
     }
 }

@@ -23,15 +23,8 @@ public class InsertionSort {
     public static void insertionSort(int[] arr) {
         if (arr == null || arr.length <= 1) return;
         
-        for (int i = 1; i < arr.length; i++) {
-            int key = arr[i];
-            int j = i - 1;
-            
-            while (j >= 0 && arr[j] > key) {
-                arr[j + 1] = arr[j];
-                j--;
-            }
-            arr[j + 1] = key;
-        }
+        // TODO: Implement insertion sort algorithm
+        // Hint: Start from the second element and insert each element into its correct position
+        // in the sorted portion of the array
     }
 }

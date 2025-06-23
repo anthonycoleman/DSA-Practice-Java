@@ -33,19 +33,15 @@ public class FibonacciMemoization {
     public static long fibonacciWithMemoization(int n) {
         if (n < 0) throw new IllegalArgumentException("n must be non-negative");
         
-        Map<Integer, Long> memo = new HashMap<>();
-        return fibonacciMemoHelper(n, memo);
+        // TODO: Implement Fibonacci with memoization
+        // Hint: Create a HashMap to store previously calculated results
+        // Use a helper method for the recursive calculation
+        return 0; // Placeholder return value
     }
     
     private static long fibonacciMemoHelper(int n, Map<Integer, Long> memo) {
-        if (n <= 1) return n;
-        
-        if (memo.containsKey(n)) {
-            return memo.get(n);
-        }
-        
-        long result = fibonacciMemoHelper(n - 1, memo) + fibonacciMemoHelper(n - 2, memo);
-        memo.put(n, result);
-        return result;
+        // TODO: Implement the memoization helper method
+        // Hint: Check if result is already in memo, if not calculate and store it
+        return 0; // Placeholder return value
     }
 }
